@@ -1,0 +1,22 @@
+\select@language {english}
+\setcounter {tocdepth}{1}
+\contentsline {part}{\numberline {I}Theorie}{3}{part.1}
+\contentsline {chapter}{\numberline {1}Begriffe}{4}{chapter.1}
+\contentsline {section}{\numberline {1.1}Orthesen}{4}{section.1.1}
+\contentsline {section}{\numberline {1.2}Angetriebenes Exoskelett}{4}{section.1.2}
+\contentsline {chapter}{\numberline {2}Stand der Technik}{5}{chapter.2}
+\contentsline {section}{\numberline {2.1}Bionic Leg (AlterG inc.)}{5}{section.2.1}
+\contentsline {section}{\numberline {2.2}Ekso Exoskeleton (Eksobionics Ltd.)}{5}{section.2.2}
+\contentsline {section}{\numberline {2.3}Indego (Parker Hannifin)}{5}{section.2.3}
+\contentsline {section}{\numberline {2.4}Re-Walk (Argo Medical)}{6}{section.2.4}
+\contentsline {section}{\numberline {2.5}HAL (Cyberdyne)}{6}{section.2.5}
+\contentsline {section}{\numberline {2.6}Rex (RexBionics)}{6}{section.2.6}
+\contentsline {section}{\numberline {2.7}MyoPro (Myomo)}{7}{section.2.7}
+\contentsline {chapter}{\numberline {3}Stand der Forschung}{8}{chapter.3}
+\contentsline {section}{\numberline {3.1}NEUROExos (BioRobotics Institute, Scuola Superiore Sant\IeC {\textquoteright }Anna, Italien)}{8}{section.3.1}
+\contentsline {section}{\numberline {3.2}Ankle-Foot-Orthese (Human Neuromechanics Laboratory, University of Michigan, USA)}{8}{section.3.2}
+\contentsline {chapter}{\numberline {4}Myoelektrische Steuerung}{10}{chapter.4}
+\contentsline {section}{\numberline {4.1}Elektromyographische Signale}{10}{section.4.1}
+\contentsline {section}{\numberline {4.2}Signalverarbeitung}{11}{section.4.2}
+\contentsline {section}{\numberline {4.3}Myoelektrische Steuerung}{11}{section.4.3}
+\contentsline {chapter}{Bibliography}{12}{section.4.3}

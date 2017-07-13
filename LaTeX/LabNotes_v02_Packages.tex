@@ -1,0 +1,139 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Packages for LabBook template:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Version: 02
+%
+% Changelist v02:
+% ---------------------------------------------------------
+% - FontSpec package removed, main font changed to 'Arial'.
+%   Does not have to be compiled with XeLaTeX anymore.
+% - Minor changes to comments.
+% - Addition of svg package.
+% - tabularx package removed since column width can be con-
+%   trolled by adding "@{\extracolsep{\fill}}" before defining
+%		columns (see example table for details).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Packages for character encoding and hyphenation.
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+
+%Packages for graphics import.
+\usepackage{graphicx,svg}
+
+%Caption package to control the typesetting of float captions.
+\usepackage[
+labelfont={bf},
+font={small},
+singlelinecheck=false,
+format=plain
+]{caption}
+
+%Standard AMS math package for math formatting
+\usepackage{amsmath,amssymb,wasysym}
+
+%SIunitx package for formatting of SI units. For options, see doc. Custom units are included.
+\usepackage{siunitx}
+\AtBeginDocument{\sisetup{per-mode=reciprocal, list-final-separator={, and }, range-phrase={\text{--}}, sticky-per, number-unit-product=\text{\,}, product-units=power, list-units=single, range-units=single, quotient-mode=fraction, fraction-function=\nicefrac, retain-unity-mantissa=false,math-rm=\mathrm, text-rm=\rmfamily, detect-weight, binary-units=true}}
+\DeclareSIUnit\molar{M}
+\DeclareSIUnit\particles{particles}
+\DeclareSIUnit\rpm{rpm}
+\DeclareSIUnit\units{\textsc{u}}
+\DeclareSIUnit\ccm{ccm}
+\DeclareSIUnit\psi{psi}
+\DeclareSIUnit\rad{rad}
+\DeclareSIUnit\fps{fps}
+\DeclareSIUnit\sq{\ensuremath{\Box}}
+
+%Macro to define function for times. I.e. \hms{1} gives '1 h', \hms{2;30} gives '2 h 30 min', \hms{;;30} gives '30 sec', etc...
+\ExplSyntaxOn
+\NewDocumentCommand \hms { o > { \SplitArgument { 2 } { ; } } m }
+  {
+    \group_begin:
+      \IfNoValueF {#1}
+        { \keys_set:nn { siunitx } {#1} }
+      \siunitx_hms_output:nnn #2
+    \group_end:
+  }
+\cs_new_protected:Npn \siunitx_hms_output:nnn #1#2#3
+  {
+    \IfNoValueF {#1}
+      {
+        \tl_if_blank:nF {#1}
+          {
+            \SI {#1} { \hour }
+            \IfNoValueF {#2} { ~ }
+          }
+      }
+    \IfNoValueF {#2}
+      {
+        \tl_if_blank:nF {#2}
+          {
+            \SI {#2} { \minute }
+            \IfNoValueF {#3} { ~ }
+          }
+      }
+    \IfNoValueF {#3}
+      { \tl_if_blank:nF {#3} { \SI {#3} { \second } } }
+  }
+\ExplSyntaxOff
+
+%Setspace package for line spacing macros.
+\usepackage{setspace}
+
+%Booktabs package for horizontal rules (\toprule, \midrule, \bottomrule).
+\usepackage{booktabs}
+
+%Scrlayer-scrpage package for formatting of header and footer.
+\usepackage[headsepline=true,plainheadsepline=true,%
+						footsepline=true,plainfootsepline=true]%
+					 {scrlayer-scrpage}
+
+%Package to input chemical formulae easier (\ce{H20}, \ce{H2S04}, \ce{Ca^2+}, etc.).
+\usepackage[version=3]{mhchem}
+
+%For hyperlinks between chapters, citations, etc.
+\usepackage[plainpages=false,hidelinks]{hyperref}
+
+%mathpazo package to change math font.
+\usepackage{mathpazo}
+
+%enumitem for control over list formatting.
+\usepackage{enumitem}
+
+%xcolor package for definition of colors etc.
+\usepackage{xcolor}
+
+%Code formatting
+\usepackage{listings} %Library to list the code
+
+%Tikz package for drawing line graphs etc.
+\usepackage{tikz}
+\usetikzlibrary{positioning} %library for relative alignments
+
+%Circuitikz package for drawing circuits.
+\usepackage{xstring}
+\usepackage[europeanresistor]{circuitikz}
+
+%grffile package helps with special characters in file and directory names.
+\usepackage{grffile}
+
+%geometry package allows flexible formatting of page margins etc.
+\usepackage[vcentering]{geometry}
+
+%lipsum package for blind text.
+\usepackage{lipsum}
+
+%Define a command to read in all .tex files from the individual years.
+\def\inputLabDays{%
+	\immediate\write18{cmd /c FileList_LabDays.bat}%
+  \InputIfFileExists{./OutList.tmp}{}}
+
+%Define a command to read in all .tex files from the SOP directory.
+\def\inputSOPs{%
+	\immediate\write18{cmd /c FileList_SOPs.bat}%
+  \InputIfFileExists{./SOPs/OutList.tmp}{}}
+	
+%Scrhack package to fix \float@addtolist warning.
+\usepackage{scrhack}

@@ -1,0 +1,40 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\labday{Thursday 01 January, 1970}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\experiment{Starting to count time}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph{Introduction}~\\
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing
+vitae, felis. Curabitur dictum gravida mauris.
+
+\paragraph{Materials}
+\begin{itemize}
+\item Some
+\item stuff 
+\item needed 
+\item for 
+\item the 
+\item experiment
+\end{itemize}
+
+\paragraph{Experimental procedure}~\\
+Nam dui ligula, fringilla a, euismod sodales, sollicitudin vel, wisi. Morbi auctor lorem non justo. Nam lacus libero, pretium at, lobortis vitae, ultricies et, tellus. Donec aliquet, tortor sed accumsan bibendum, erat ligula aliquet magna, vitae ornare odio metus a mi. Morbi ac orci et nisl hendrerit mollis. Suspendisse ut massa. Cras nec ante. Pellentesque a nulla. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam tincidunt urna. Nulla ullamcorper vestibulum turpis. Pellentesque cursus luctus mauris.\footnote{\lipsum[14]}
+
+\paragraph{Results and Discussion}~\\
+\lipsum[3]
+%This is an example on how to use the global table style.
+\begin{table}
+\caption{This is an exemplary table. The \texttt{S} column type from the \texttt{SIunitx} package is used to align entries at the decimal point. Using a \texttt{tabular*} environment together with \texttt{{\makeatletter}@{\makeatother}\{{\textbackslash}extracolsep\{{\textbackslash}fill\}\}} allows for auto-width columns.}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} c S[table-format=2.1] S[table-format=2.1e1]}
+\beforeheading
+\heading{value 1 [$\mathrm{units}$]} & \heading{value 2 [$\mathrm{units}$]} & \heading{value 3 [$\mathrm{units}$]} \\\afterheading
+3 & 14.1 & 59.2e6 \\\normalline
+5 & 35.8 & 97.9e3 \\\normalline
+2 & 38.4 & 62.6e4 \\\normalline
+3 & 38.3 & 27.9e5 \\\lastline
+\end{tabular*}
+\end{table}
+
+\paragraph{Summary and further steps}~\\
+\lipsum[13]
